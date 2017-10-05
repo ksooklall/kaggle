@@ -25,3 +25,21 @@ def filter_cols_by_nan(df, threshold=0.98):
     print('Removed: {}'.format(nan_cols))
     return df
 
+
+def standerize(df, use_cols=[]):
+    """
+    Standeries all values in a dataframe
+    If cols is given, will only standerize values in given column
+    :param df: Dataframe
+    :param cols: List of columns
+    :return:
+    """
+    cols = df.columns
+    if use_cols:
+        cols = use_cols
+
+    mu = df[cols].mean()
+    std = df[cols].std()
+    standerized_df = (df[cols] - mu) / std
+
+    return mu, std, standerized_df

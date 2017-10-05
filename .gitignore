@@ -109,3 +109,6 @@ venv.bak/
 
 # kaggle files
 .idea/
+
+# image
+*.jpeg
