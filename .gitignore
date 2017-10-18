@@ -112,3 +112,6 @@ venv.bak/
 
 # image
 *.jpeg
+
+# Model weights
+*.h5
